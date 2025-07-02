@@ -36,7 +36,7 @@ const Chu = () => {
         maxPolarAngle={Math.PI / 1.9}
       />
 
-      <Head scale={5} rotation={[0.1, 0, 0]} position={[-0.1, -0.2, 0]}/>
+      <Head scale={5} rotation={[0.1, 0, 0]} position={[0, -0.2, 0]}/>
     </Canvas>
   );
 };
