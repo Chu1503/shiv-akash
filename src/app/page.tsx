@@ -54,7 +54,7 @@ export default function Home() {
                 variants={slideUp}
                 className="text-8xl font-bold text-[#e8e8e8]"
               >
-                I'm Shiv Akash!
+                I{"'"}m Shiv Akash!
               </motion.h1>
               <motion.p
                 variants={slideUp}
