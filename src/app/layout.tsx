@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${spaceGrotesk.variable} font-sans`}>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>
