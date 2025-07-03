@@ -71,13 +71,13 @@ const Navbar = () => {
       {/* Desktop Nav Menu */}
       <div className="w-full justify-center items-center hidden lg:flex z-40 text-white">
         <nav className="flex gap-30">
-          <CustomLink href="/about" title="About" />
+          {/* <CustomLink href="/about" title="About" /> */}
           <CustomLink href="/experience" title="Experience" />
           <Link href="/" className="mx-10">
             Shiv Akash
           </Link>
           <CustomLink href="/projects" title="Projects" />
-          <CustomLink href="/contact" title="Contact" />
+          {/* <CustomLink href="/contact" title="Contact" /> */}
         </nav>
       </div>
 
@@ -101,11 +101,11 @@ const Navbar = () => {
                 title="Home"
                 onClick={() => setIsOpen(false)}
               />
-              <CustomLink
+              {/* <CustomLink
                 href="/about"
                 title="About"
                 onClick={() => setIsOpen(false)}
-              />
+              /> */}
               <CustomLink
                 href="/experience"
                 title="Experience"
@@ -116,11 +116,11 @@ const Navbar = () => {
                 title="Projects"
                 onClick={() => setIsOpen(false)}
               />
-              <CustomLink
+              {/* <CustomLink
                 href="/contact"
                 title="Contact"
                 onClick={() => setIsOpen(false)}
-              />
+              /> */}
             </nav>
           </motion.div>
         )}

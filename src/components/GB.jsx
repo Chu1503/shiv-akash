@@ -1,7 +1,7 @@
 import React from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function Head(props) {
+export function GB(props) {
   const { scene } = useGLTF("/models/chu-gb.glb");
 
   return (

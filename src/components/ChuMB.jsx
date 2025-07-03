@@ -2,14 +2,14 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { Head } from "./Head";
+import { MB } from "./MB";
 
-const Chu = () => {
+const ChuMB = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <Canvas camera={{ position: [0, 0, 45], fov: 30 }} className="!w-full !h-full">
-      <directionalLight intensity={2} position={[0, 0, 10]} color="#fff" />
+      <directionalLight intensity={5} position={[0, 0, 10]} color="#fff" />
 
       {/* <directionalLight
         intensity={10}
@@ -36,9 +36,9 @@ const Chu = () => {
         maxPolarAngle={Math.PI / 1.9}
       />
 
-      <Head scale={5} rotation={[0.1, 0, 0]} position={[0, -0.1, 0]}/>
+      <MB scale={4} rotation={[0.1, 0, 0]} position={[0, -0.05, 0]}/>
     </Canvas>
   );
 };
 
-export default Chu;
+export default ChuMB;

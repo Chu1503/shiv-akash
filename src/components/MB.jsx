@@ -1,8 +1,8 @@
 import React from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function Head(props) {
-  const { scene } = useGLTF("/models/chu-gb.glb");
+export function MB(props) {
+  const { scene } = useGLTF("/models/chu-mb.glb");
 
   return (
     <primitive
@@ -13,4 +13,4 @@ export function Head(props) {
   );
 }
 
-useGLTF.preload("/models/chu-gb.glb");
+useGLTF.preload("/models/chu-mb.glb");

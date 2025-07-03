@@ -104,6 +104,7 @@ export default function Home() {
           <Chu />
         </div>
       </div>
+      
     </main>
   );
 }
