@@ -1,6 +1,6 @@
 "use client";
 
-import Chu from "@/components/Chu";
+// import Chu from "@/components/Chu";
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,7 +67,7 @@ export default function Home() {
             </motion.p>
             <motion.h1
               variants={slideUp}
-              className="text-3xl md:text-4xl xl:text-8xl font-bold 
+              className="text-6xl md:text-4xl xl:text-8xl font-bold 
               text-red-500 md:text-blue-500 xl:text-green-500
               "
             >
