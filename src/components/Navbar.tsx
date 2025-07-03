@@ -46,7 +46,7 @@ const CustomLink = ({
     <Link href={href} className={`${className} relative group`}>
       <span className="relative z-10">{title}</span>
       <span
-        className={`absolute left-0 -bottom-0.5 h-[2px] bg-black transition-all duration-300 ease-in-out
+        className={`absolute left-0 -bottom-0.5 h-[2px] bg-white transition-all duration-300 ease-in-out
           ${isActive ? "w-full" : "w-0"} group-hover:w-full`}
       />
     </Link>
@@ -62,13 +62,11 @@ const Navbar = () => {
 
   return (
     <header className="w-full py-8 px-4 font-medium flex items-center justify-between relative">
-      <button className="lg:hidden z-50" onClick={handleClick}>
-        {isOpen ? (
-          <X size={30} className="text-white" />
-        ) : (
+      {!isOpen && (
+        <button className="lg:hidden z-50" onClick={handleClick}>
           <Menu size={30} className="text-white" />
-        )}
-      </button>
+        </button>
+      )}
 
       {/* Desktop Nav Menu */}
       <div className="w-full justify-center items-center hidden lg:flex z-40 text-white">
@@ -92,9 +90,12 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 left-0 w-screen h-screen bg-amber-500 z-40 flex flex-col items-center justify-center gap-15 lg:hidden"
+            className="fixed top-0 left-0 w-screen h-screen bg-amber-500 z-40 flex flex-col items-center justify-center gap-10 lg:hidden"
           >
             <nav className="flex flex-col items-center gap-15 text-4xl">
+              <button onClick={handleClick}>
+                <X size={40} className="text-black" />
+              </button>
               <CustomLink
                 href="/"
                 title="Home"

@@ -36,7 +36,7 @@ export default function Home() {
     <main className="flex items-center w-screen py-6 md:py-10 xl:py-16 bg-black">
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
         <Particles />
-        {/* <InteractiveGridPattern /> */}
+        <InteractiveGridPattern />
       </div>
       {/* Noise Texture */}
       {/* <svg className="absolute inset-0 h-full w-full opacity-20">
