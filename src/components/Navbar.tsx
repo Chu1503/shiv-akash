@@ -90,11 +90,11 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 left-0 w-screen h-screen bg-amber-500 z-40 flex flex-col items-center justify-center gap-10 lg:hidden"
+            className="fixed top-0 left-0 w-screen h-screen bg-amber-500 z-40 flex flex-col justify-center items-center px-6 lg:hidden"
           >
-            <nav className="flex flex-col items-center gap-15 text-4xl">
-              <button onClick={handleClick}>
-                <X size={40} className="text-black" />
+            <nav className="flex flex-col items-center gap-12 text-4xl">
+              <button onClick={handleClick} className=" text-black">
+                <X size={36} />
               </button>
               <CustomLink
                 href="/"

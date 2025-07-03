@@ -33,11 +33,12 @@ const slideUp = {
 
 export default function Home() {
   return (
-    <main className="flex items-center w-screen py-6 md:py-10 xl:py-16 bg-black">
-      <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
+    <main className="flex items-center w-screen py-3 md:py-10 xl:py-16 bg-black">
+      <div className="absolute inset-0 z-0 overflow-hidden w-full h-full hidden lg:block">
         <Particles />
         <InteractiveGridPattern />
       </div>
+
       {/* Noise Texture */}
       {/* <svg className="absolute inset-0 h-full w-full opacity-20">
         <filter id="noiseFilter">
@@ -57,7 +58,7 @@ export default function Home() {
             variants={container}
             initial="hidden"
             animate="show"
-            className="space-y-6"
+            className="space-y-3 sm:space-y-6"
           >
             <motion.p
               variants={slideUp}
@@ -99,7 +100,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-        <div className="w-full md:w-1/3 xl:w-1/3 flex items-center justify-center h-[300px] md:h-[325px] xl:h-[475px]">
+        <div className="w-full md:w-1/3 xl:w-1/3 flex items-center justify-center h-[250px] md:h-[325px] xl:h-[475px] mt-4 sm:mt-0">
           <Chu />
         </div>
       </div>
