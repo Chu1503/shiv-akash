@@ -8,7 +8,7 @@ const ChuKB = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
-    <Canvas camera={{ position: [0, 0, 45], fov: 30 }} className="!w-full !h-full">
+    <Canvas camera={{ position: [45, 0, 45], fov: 30 }} className="!w-full !h-full">
       <directionalLight intensity={5} position={[0, 0, 10]} color="#fff" />
 
       {/* <directionalLight
