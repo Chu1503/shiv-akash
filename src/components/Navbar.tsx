@@ -1,18 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 type CustomLinkProps = {
   href: string;
   title: string;
   className?: string;
+  onClick?: () => void;
 };
 
-const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
+const CustomLink = ({
+  href,
+  title,
+  className = "",
+  onClick,
+}: CustomLinkProps) => {
   const pathname = usePathname();
+  const router = useRouter();
   const isActive = pathname === href;
+
+  const handleClick = async () => {
+    if (onClick) {
+      await router.push(href);
+      onClick();
+    }
+  };
+
+  if (onClick) {
+    return (
+      <button onClick={handleClick} className={`${className} relative group`}>
+        <span className="relative z-10">{title}</span>
+        <span
+          className={`absolute left-0 -bottom-0.5 h-[2px] bg-black transition-all duration-300 ease-in-out
+            ${isActive ? "w-full" : "w-0"} group-hover:w-full`}
+        />
+      </button>
+    );
+  }
 
   return (
     <Link href={href} className={`${className} relative group`}>
@@ -25,22 +53,77 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
   );
 };
 
-
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="w-full px-120 py-8 font-medium flex items-center justify-between bg-[#4af6a0]">
-      <nav className="flex gap-30">
-        <CustomLink href="/about" title="About" />
-        <CustomLink href="/experience" title="Experience" />
-      </nav>
-      <div className="absolute left-1/2 -translate-x-1/2">
-        {/* <CustomLink href="/" title="Home" /> */}
-        <Link href="/">Shiv Akash</Link>
+    <header className="w-full py-8 px-4 font-medium flex items-center justify-between relative">
+      <button className="lg:hidden z-50" onClick={handleClick}>
+        {isOpen ? (
+          <X size={30} className="text-white" />
+        ) : (
+          <Menu size={30} className="text-white" />
+        )}
+      </button>
+
+      {/* Desktop Nav Menu */}
+      <div className="w-full justify-center items-center hidden lg:flex z-40 text-white">
+        <nav className="flex gap-30">
+          <CustomLink href="/about" title="About" />
+          <CustomLink href="/experience" title="Experience" />
+          <Link href="/" className="mx-10">
+            Shiv Akash
+          </Link>
+          <CustomLink href="/projects" title="Projects" />
+          <CustomLink href="/contact" title="Contact" />
+        </nav>
       </div>
-      <nav className="flex gap-30">
-        <CustomLink href="/projects" title="Projects" />
-        <CustomLink href="/contact" title="Contact" />
-      </nav>
+
+      {/* Mobile Nav Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed top-0 left-0 w-screen h-screen bg-amber-500 z-40 flex flex-col items-center justify-center gap-15 lg:hidden"
+          >
+            <nav className="flex flex-col items-center gap-15 text-4xl">
+              <CustomLink
+                href="/"
+                title="Home"
+                onClick={() => setIsOpen(false)}
+              />
+              <CustomLink
+                href="/about"
+                title="About"
+                onClick={() => setIsOpen(false)}
+              />
+              <CustomLink
+                href="/experience"
+                title="Experience"
+                onClick={() => setIsOpen(false)}
+              />
+              <CustomLink
+                href="/projects"
+                title="Projects"
+                onClick={() => setIsOpen(false)}
+              />
+              <CustomLink
+                href="/contact"
+                title="Contact"
+                onClick={() => setIsOpen(false)}
+              />
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { Particles } from "@/components/magicui/particles";
+import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { ExternalLink } from "lucide-react";
 
 const container = {
@@ -31,7 +33,11 @@ const slideUp = {
 
 export default function Home() {
   return (
-    <main className="flex items-center w-screen py-12 bg-black">
+    <main className="flex items-center w-screen py-6 md:py-10 xl:py-16 bg-black">
+      <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
+        <Particles />
+        {/* <InteractiveGridPattern /> */}
+      </div>
       {/* Noise Texture */}
       {/* <svg className="absolute inset-0 h-full w-full opacity-20">
         <filter id="noiseFilter">
@@ -45,7 +51,7 @@ export default function Home() {
         </filter>
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
       </svg> */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full px-6 md:px-16 xl:px-36">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-16 xl:px-36">
         <div className="w-full md:w-2/3 xl:w-2/3">
           <motion.div
             variants={container}
@@ -93,7 +99,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-        <div className="w-full md:w-1/3 xl:w-1/3 flex items-center justify-center h-[200px] md:h-[325px] xl:h-[475px]">
+        <div className="w-full md:w-1/3 xl:w-1/3 flex items-center justify-center h-[300px] md:h-[325px] xl:h-[475px]">
           <Chu />
         </div>
       </div>
