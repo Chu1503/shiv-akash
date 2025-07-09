@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useRef,
   useState,
+  useCallback,
 } from "react";
 
 interface MousePosition {
@@ -136,12 +137,11 @@ export const Particles: React.FC<ParticlesProps> = ({
     initCanvas();
   }, [refresh]);
 
-  const initCanvas = () => {
+  const initCanvas = useCallback(() => {
     resizeCanvas();
     drawParticles();
-  };
-
-  const onMouseMove = () => {
+  }, []);
+  const onMouseMove = useCallback(() => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect();
       const { w, h } = canvasSize.current;
@@ -153,7 +153,7 @@ export const Particles: React.FC<ParticlesProps> = ({
         mouse.current.y = y;
       }
     }
-  };
+  }, [mousePosition.x, mousePosition.y]);
 
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
@@ -224,7 +224,7 @@ export const Particles: React.FC<ParticlesProps> = ({
         0,
         0,
         canvasSize.current.w,
-        canvasSize.current.h,
+        canvasSize.current.h
       );
     }
   };
@@ -243,14 +243,14 @@ export const Particles: React.FC<ParticlesProps> = ({
     start1: number,
     end1: number,
     start2: number,
-    end2: number,
+    end2: number
   ): number => {
     const remapped =
       ((value - start1) * (end2 - start2)) / (end1 - start1) + start2;
     return remapped > 0 ? remapped : 0;
   };
 
-  const animate = () => {
+  const animate = useCallback(() => {
     clearContext();
     circles.current.forEach((circle: Circle, i: number) => {
       // Handle the alpha value
@@ -262,7 +262,7 @@ export const Particles: React.FC<ParticlesProps> = ({
       ];
       const closestEdge = edge.reduce((a, b) => Math.min(a, b));
       const remapClosestEdge = parseFloat(
-        remapValue(closestEdge, 0, 20, 0, 1).toFixed(2),
+        remapValue(closestEdge, 0, 20, 0, 1).toFixed(2)
       );
       if (remapClosestEdge > 1) {
         circle.alpha += 0.02;
@@ -298,7 +298,7 @@ export const Particles: React.FC<ParticlesProps> = ({
       }
     });
     rafID.current = window.requestAnimationFrame(animate);
-  };
+  }, [ease, staticity, vx, vy, color]);
 
   return (
     <div
