@@ -3,6 +3,7 @@
 import ProjectCard from "@/components/ProjectCard";
 import phonePennywise from "@/assets/phone_pennywise.webp";
 import phoneSubtrack from "@/assets/phone_subtrack_2.webp";
+import webCinemate from "@/assets/web_cinemate.webp";
 
 export default function Projects() {
   return (
@@ -22,6 +23,13 @@ export default function Projects() {
           link="Visit Website"
           image={phonePennywise}
           reverse
+        />
+        <ProjectCard
+          title="Cinemate"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          link="Visit Website"
+          image={webCinemate}
         />
       </div>
     </main>
