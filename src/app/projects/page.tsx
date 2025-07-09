@@ -1,31 +1,6 @@
 "use client";
 
 import ProjectCard from "@/components/ProjectCard";
-import { cubicBezier, motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import Tilt from "react-parallax-tilt";
-
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const slideUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: cubicBezier(0.22, 1, 0.36, 1),
-    },
-  },
-};
 
 export default function Projects() {
   return (
