@@ -2,14 +2,16 @@
 
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 import Tilt from "react-parallax-tilt";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
+import { useEffect, useState } from "react";
 
 type ProjectCardProps = {
   title: string;
   description: string;
   link: string;
-  image: string;
+  image: StaticImageData;
   reverse?: boolean;
 };
 
@@ -41,11 +43,33 @@ export default function ProjectCard({
   image,
   reverse = false,
 }: ProjectCardProps) {
+  const [angleX, setAngleX] = useState(0);
+  const [angleY, setAngleY] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    let frameId: number;
+    let t = 0;
+
+    const animate = () => {
+      const radius = 7;
+      if (!isHovering) {
+        setAngleX(Math.sin(t) * radius);
+        setAngleY(Math.cos(t) * radius);
+      }
+      t += 0.005;
+      frameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+    return () => cancelAnimationFrame(frameId);
+  }, [isHovering]);
+
   return (
     <div
       className={`flex flex-col ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-      } items-center w-full px-4 md:px-16 xl:px-24 pb-10 gap-10  `}
+      } items-center w-full px-4 md:px-16 xl:px-24 mb-15 gap-10`}
     >
       <div className="w-full lg:w-1/3 text-center lg:text-left  ">
         <motion.div
@@ -85,28 +109,25 @@ export default function ProjectCard({
         </motion.div>
       </div>
 
-      <div className="w-full lg:w-2/3 flex items-center justify-center  ">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className=""
-        >
+      <div className="relative w-full lg:w-2/3 flex items-center justify-center">
+        <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={slideUp}>
             <Tilt
+              tiltEnable={true}
+              tiltAngleXManual={!isHovering ? angleX : undefined}
+              tiltAngleYManual={!isHovering ? angleY : undefined}
+              tiltMaxAngleX={3}
+              tiltMaxAngleY={3}
+              scale={1}
               glareEnable={false}
-              tiltMaxAngleX={30}
-              tiltMaxAngleY={30}
-              transitionSpeed={2500}
-              gyroscope={true}
               className="w-full rounded-xl overflow-hidden"
+              onEnter={() => setIsHovering(true)}
+              onLeave={() => setIsHovering(false)}
             >
               <Image
                 src={image}
                 alt={title}
-                width={500}
-                height={600}
-                className="w-full object-cover h-auto lg:h-[500px]"
+                className="w-[90%] lg:w-[65%] object-cover h-auto mx-auto"
               />
             </Tilt>
           </motion.div>

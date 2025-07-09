@@ -1,6 +1,7 @@
 "use client";
 
 import ProjectCard from "@/components/ProjectCard";
+import phonePennywise from "@/assets/phone_pennywise.webp";
 
 export default function Projects() {
   return (
@@ -11,14 +12,14 @@ export default function Projects() {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua"
           link="Download APK"
-          image="/images/phone.png"
+          image={phonePennywise}
         />
         <ProjectCard
           title="Pennywise"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua."
           link="Visit Website"
-          image="/images/phone.png"
+          image={phonePennywise}
           reverse
         />
       </div>
