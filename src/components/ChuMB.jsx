@@ -36,7 +36,7 @@ const ChuMB = () => {
         maxPolarAngle={Math.PI / 1.9}
       />
 
-      <MB scale={4} rotation={[0.1, 0, 0]} position={[0, -0.05, 0]}/>
+      <MB scale={5} rotation={[0.1, 0, 0]} position={[0, -0.05, 0]}/>
     </Canvas>
   );
 };

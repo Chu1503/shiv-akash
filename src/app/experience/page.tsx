@@ -10,13 +10,13 @@ export default function Experience() {
       <div className="w-[80%] lg:w-1/3 flex items-center justify-center h-[500px]">
         <ChuKB />
       </div>
-      <div className="w-[80%] lg:w-1/3 flex items-center justify-center h-[500px]">
-        <ChuGB />
-      </div>
+
       <div className="w-[80%]  lg:w-1/3 flex items-center justify-center h-[500px]">
         <ChuMB />
       </div>
-      
+      <div className="w-[80%] lg:w-1/3 flex items-center justify-center h-[500px]">
+        <ChuGB />
+      </div>
     </main>
   );
 }
