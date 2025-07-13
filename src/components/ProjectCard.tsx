@@ -69,7 +69,7 @@ export default function ProjectCard({
     <div
       className={`flex flex-col ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-      } items-center w-full px-4 md:px-16 xl:px-24 mb-15 gap-10`}
+      } items-center w-full px-4 md:px-16 xl:px-24 mb-20 gap-10`}
     >
       <div className="w-full lg:w-1/3 text-center lg:text-left  ">
         <motion.div
