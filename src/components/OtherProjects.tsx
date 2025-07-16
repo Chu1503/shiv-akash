@@ -9,7 +9,6 @@ interface OtherProjectsProps {
   title: string;
   description: string;
   link: string;
-  github: string;
   image: StaticImageData;
 }
 
@@ -29,7 +28,6 @@ const OtherProjects = ({
   title,
   description,
   link,
-  github,
   image,
 }: OtherProjectsProps) => {
   return (

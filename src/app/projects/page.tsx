@@ -69,63 +69,54 @@ export default function Projects() {
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="ILLUMINA"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="SOIL CARBON"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="RESQMEALS"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="POSTURE CORRECTION"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="IPL?"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="SPOTIFY?"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="SPECTRUM ANALYSIS?"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
             <OtherProjects
               title="INTELLIGIST?"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               link="Visit Website"
               image={test}
-              github={""}
             />
           </div>
         </div>
