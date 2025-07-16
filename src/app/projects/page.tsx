@@ -7,6 +7,12 @@ import webCinemate from "@/assets/web_cinemate.webp";
 import webPwagon from "@/assets/web_pwagon.webp";
 // import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { Particles } from "@/components/magicui/particles";
+import GlassCard from "@/components/GlassCard";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
+import test from "@/assets/test.png";
+import OtherProjects from "@/components/OtherProjects";
 
 export default function Projects() {
   return (
@@ -14,7 +20,6 @@ export default function Projects() {
       <div className="fixed top-0 left-0 z-0 w-full h-full hidden lg:block">
         <Particles />
       </div>
-      
 
       {/* <FlickeringGrid
         className="absolute inset-0 z-0"
@@ -60,16 +65,74 @@ export default function Projects() {
           image={webPwagon}
           reverse
         />
-        <h1 className="text-3xl text-white">IEI Website</h1>
-        <h1 className="text-3xl text-white">Illumina Website</h1>
-        <h1 className="text-3xl text-white">Soil Organic Carbon</h1>
-        <h1 className="text-3xl text-white">ResQMeals</h1>
-        <h1 className="text-3xl text-white">Posture Correction?</h1>
-        <h1 className="text-3xl text-white">IPL?</h1>
-        <h1 className="text-3xl text-white">Spotify?</h1>
-        <h1 className="text-3xl text-white">Spectrum Analysis?</h1>
-        <h1 className="text-3xl text-white">Intelligist?</h1>
-        <h1 className="text-3xl text-white">theinfopad?</h1>
+        <br /> <br />
+        <div className="px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 place-items-center">
+            <OtherProjects
+              title="IEI WEBSITE"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="ILLUMINA"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="SOIL CARBON"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="RESQMEALS"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="POSTURE CORRECTION"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="IPL?"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="SPOTIFY?"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="SPECTRUM ANALYSIS?"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+            <OtherProjects
+              title="INTELLIGIST?"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              link="Visit Website"
+              image={test}
+              github={""}
+            />
+          </div>
+        </div>
       </div>
     </main>
   );

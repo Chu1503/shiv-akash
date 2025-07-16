@@ -80,7 +80,7 @@ export default function ProjectCard({
         >
           <motion.h1
             variants={slideUp}
-            className="text-4xl md:text-6xl xl:text-7xl font-bold text-[#e8e8e8]  "
+            className="text-4xl md:text-6xl xl:text-7xl font-bold text-[#e8e8e8] "
           >
             {title}
           </motion.h1>
