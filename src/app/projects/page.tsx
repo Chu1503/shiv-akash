@@ -7,10 +7,6 @@ import webCinemate from "@/assets/web_cinemate.webp";
 import webPwagon from "@/assets/web_pwagon.webp";
 // import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { Particles } from "@/components/magicui/particles";
-import GlassCard from "@/components/GlassCard";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { RainbowButton } from "@/components/magicui/rainbow-button";
 import test from "@/assets/test.png";
 import OtherProjects from "@/components/OtherProjects";
 
