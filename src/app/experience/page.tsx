@@ -4,7 +4,7 @@ import ChuKB from "@/components/ChuKB";
 import ChuMB from "@/components/ChuMB";
 import ChuGB from "@/components/ChuGB";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
-import GlassCard from "@/components/GlassCard";
+// import GlassCard from "@/components/GlassCard";
 
 export default function Experience() {
   return (
