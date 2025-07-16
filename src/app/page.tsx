@@ -1,6 +1,5 @@
 "use client";
 
-import Chu from "@/components/Chu";
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -101,7 +100,7 @@ export default function Home() {
           </motion.div>
         </div>
         <div className="w-full md:w-1/3 xl:w-1/3 flex items-center justify-center h-[250px] md:h-[325px] xl:h-[475px] mt-4 sm:mt-0">
-          <Chu />
+          {/* <Chu /> */}
         </div>
       </div>
       
