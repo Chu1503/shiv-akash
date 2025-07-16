@@ -8,7 +8,7 @@ const ChuKB = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
-    <Canvas camera={{ position: [45, 0, 45], fov: 30 }} className="!w-full !h-full">
+    <Canvas camera={{ position: [0, 0, 45], fov: 30 }} className="!w-full !h-full">
       <directionalLight intensity={5} position={[0, 0, 10]} color="#fff" />
 
       {/* <directionalLight
@@ -36,7 +36,7 @@ const ChuKB = () => {
         maxPolarAngle={Math.PI / 1.9}
       />
 
-      <KB scale={4} rotation={[0.1, 0, 0]} position={[0, -0.05, 0]}/>
+      <KB scale={4.5} rotation={[0.1, 0, 0]} position={[0, -0.1, 0]}/>
     </Canvas>
   );
 };

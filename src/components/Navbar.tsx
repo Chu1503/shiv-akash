@@ -69,7 +69,9 @@ const Navbar = () => {
       )}
 
       {/* Desktop Nav Menu */}
-      <div className="w-full justify-center items-center hidden lg:flex z-40 text-white">
+      <div className="w-auto mx-auto justify-center items-center hidden lg:flex z-40 text-white relative rounded-[30px] overflow-hidden px-10 py-4">
+        <div className="absolute inset-0 rounded-[30px] z-10 pointer-events-none shadow-[inset_2px_2px_0px_-2px_rgba(255,255,255,0.7),inset_0_0_3px_1px_rgba(255,255,255,0.7)]" />
+        <div className="absolute inset-0 rounded-[30px] -z-10 [filter:url(#container-glass)] backdrop-blur-0" />
         <nav className="flex gap-30">
           {/* <CustomLink href="/about" title="About" /> */}
           <CustomLink href="/experience" title="Experience" />
