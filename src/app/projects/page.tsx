@@ -9,6 +9,10 @@ import webPwagon from "@/assets/web_pwagon.webp";
 import { Particles } from "@/components/magicui/particles";
 import test from "@/assets/test.png";
 import OtherProjects from "@/components/OtherProjects";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import iei_website from "@/assets/iei-website.webp";
+import illumina_website from "@/assets/illumina.webp";
+import soil_website from "@/assets/soil.webp"
 
 export default function Projects() {
   return (
@@ -62,64 +66,64 @@ export default function Projects() {
           reverse
         />
         <br /> <br />
-        <div className="px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 place-items-center">
-            <OtherProjects
-              title="IEI WEBSITE"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="ILLUMINA"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="SOIL CARBON"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="RESQMEALS"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="POSTURE CORRECTION"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="IPL?"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="SPOTIFY?"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="SPECTRUM ANALYSIS?"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-            <OtherProjects
-              title="INTELLIGIST?"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              link="Visit Website"
-              image={test}
-            />
-          </div>
-        </div>
+        <BentoGrid className="px-4">
+          <BentoGridItem
+            title="IEI WEBSITE"
+            description="Official website of the IE(I) VIT Student Chapter."
+            link="https://ieivit.vercel.app"
+            githubLink="https://github.com/Chu1503/iei-website"
+            image={iei_website}
+          />
+          <BentoGridItem
+            title="ILLUMINA"
+            description="Official website for Illumina, a hackathon organized by IE(I) VIT. Participants can register and form teams on the website."
+            link="https://illumina.vercel.app"
+            githubLink="https://github.com/Chu1503/illumina_2.0_website"
+            image={illumina_website}
+          />
+          <BentoGridItem
+            title="SOIL ORGANIC CARBON CALCULATOR"
+            description="Website that predicts soil organic carbon using machine learning models like Random Forest, XGBoost, and SVR. Trained on data collected from IIT Madras, it uses inputs like pH, EC, nitrogen, phosphorus, and potassium for real-time predictions."
+            link="Visit Website"
+            image={soil_website}
+          />
+          {/* <BentoGridItem
+            title="RESQMEALS"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            link="Visit Website"
+            image={test}
+          />
+          <BentoGridItem
+            title="POSTURE CORRECTION"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            link="Visit Website"
+            image={test}
+          />
+          <BentoGridItem
+            title="IPL?"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            link="Visit Website"
+            image={test}
+          />
+          <BentoGridItem
+            title="SPOTIFY?"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            link="Visit Website"
+            image={test}
+          />
+          <BentoGridItem
+            title="SPECTRUM ANALYSIS?"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            link="Visit Website"
+            image={test}
+          />
+          <BentoGridItem
+            title="INTELLIGIST?"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            link="Visit Website"
+            image={test}
+          /> */}
+        </BentoGrid>
       </div>
     </main>
   );

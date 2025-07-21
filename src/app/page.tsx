@@ -8,6 +8,7 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 import { Particles } from "@/components/magicui/particles";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { ExternalLink } from "lucide-react";
+// import { Vortex } from "@/components/ui/vortex";
 
 const container = {
   hidden: {},
@@ -36,6 +37,12 @@ export default function Home() {
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full hidden lg:block">
         <Particles />
         <InteractiveGridPattern />
+        {/* <Vortex
+          backgroundColor="black"
+          rangeY={800}
+          particleCount={100}
+          baseHue={220}
+        /> */}
       </div>
 
       {/* Noise Texture */}
@@ -51,6 +58,7 @@ export default function Home() {
         </filter>
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
       </svg> */}
+
       <div className="flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-16 xl:px-36">
         <div className="w-full md:w-2/3 xl:w-2/3">
           <motion.div
@@ -103,7 +111,6 @@ export default function Home() {
           {/* <Chu /> */}
         </div>
       </div>
-      
     </main>
   );
 }
