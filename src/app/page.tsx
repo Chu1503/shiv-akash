@@ -97,7 +97,7 @@ export default function Home() {
               variants={slideUp}
               className="flex items-center justify-center gap-12"
             >
-              <Link href="/Shiv-Akash-Resume.pdf" target="_blank" download>
+              <Link href="/Shiv_Akash_Resume.pdf" target="_blank" download>
                 <ShimmerButton>
                   <span className="flex items-center gap-2 text-sm md:text-lg">
                     Resume
