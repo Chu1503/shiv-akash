@@ -6,8 +6,8 @@ import Link from "next/link";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { Particles } from "@/components/magicui/particles";
-// import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { ExternalLink } from "lucide-react";
+import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 
 const container = {
   hidden: {},
@@ -40,6 +40,7 @@ export default function Home() {
 
       <div className="absolute inset-0 z-1 overflow-hidden w-full h-full hidden lg:block">
         <Particles />
+        <InteractiveGridPattern />
       </div>
 
       {/* Noise Texture */}
@@ -57,7 +58,7 @@ export default function Home() {
       </svg> */}
 
       {/* <div className="flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-16 xl:px-36"> */}
-      <div className="flex flex-col items-center justify-center w-full text-center z-10">
+      <div className="flex flex-col items-center justify-center w-full text-center z-10 px-5">
         <div className="w-full md:w-2/3 xl:w-2/3">
           <motion.div
             variants={container}
@@ -95,25 +96,47 @@ export default function Home() {
             </motion.p>
             <motion.div
               variants={slideUp}
-              className="flex items-center justify-center gap-12"
+              className="flex flex-col gap-12 items-center px-5"
             >
-              <Link href="/Shiv_Akash_Resume.pdf" target="_blank" download>
-                <ShimmerButton>
-                  <span className="flex items-center gap-2 text-sm md:text-lg">
-                    Resume
-                    <ExternalLink className="h-4 w-4" />
-                  </span>
-                </ShimmerButton>
-              </Link>
+              <div className="flex gap-28">
+                <Link href="/Shiv_Akash_Resume.pdf" target="_blank" download>
+                  <ShimmerButton>
+                    <span className="flex items-center gap-2 text-sm md:text-lg">
+                      Resume
+                      <ExternalLink className="h-4 w-4" />
+                    </span>
+                  </ShimmerButton>
+                </Link>
 
-              <Link href="https://github.com/Chu1503" target="_blank">
-                <ShimmerButton>
-                  <span className="flex items-center gap-2 text-sm md:text-lg">
-                    GitHub
-                    <ExternalLink className="h-4 w-4" />
-                  </span>
-                </ShimmerButton>
-              </Link>
+                <Link href="https://github.com/Chu1503" target="_blank">
+                  <ShimmerButton>
+                    <span className="flex items-center gap-2 text-sm md:text-lg">
+                      GitHub
+                      <ExternalLink className="h-4 w-4" />
+                    </span>
+                  </ShimmerButton>
+                </Link>
+              </div>
+
+              <div className="flex gap-12">
+                <Link href="https://www.linkedin.com/in/shiv-akash" target="_blank">
+                  <ShimmerButton>
+                    <span className="flex items-center gap-2 text-sm md:text-lg">
+                      LinkedIn
+                      <ExternalLink className="h-4 w-4" />
+                    </span>
+                  </ShimmerButton>
+                </Link>
+
+                <Link href="mailto:shivakash7333@gmail.com" target="_blank">
+                  <ShimmerButton>
+                    <span className="flex items-center gap-2 text-sm md:text-lg">
+                      Email
+                      <ExternalLink className="h-4 w-4" />
+                    </span>
+                  </ShimmerButton>
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         </div>
