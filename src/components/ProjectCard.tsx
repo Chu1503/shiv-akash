@@ -5,14 +5,16 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import Tilt from "react-parallax-tilt";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 type ProjectCardProps = {
   title: string;
-  description: string;
-  link: string;
+  description: ReactNode;
   image: StaticImageData;
   reverse?: boolean;
+  githubLink?: string;
+  projectLink?: string;
+  projectLinkText?: string;
 };
 
 const container = {
@@ -39,9 +41,11 @@ const slideUp = {
 export default function ProjectCard({
   title,
   description,
-  link,
   image,
   reverse = false,
+  githubLink,
+  projectLink,
+  projectLinkText,
 }: ProjectCardProps) {
   const [angleX, setAngleX] = useState(0);
   const [angleY, setAngleY] = useState(0);
@@ -71,7 +75,7 @@ export default function ProjectCard({
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       } items-center w-full px-4 md:px-16 xl:px-24 mb-20 gap-10`}
     >
-      <div className="w-full lg:w-1/3 text-center lg:text-left  ">
+      <div className="w-full lg:w-1/2 text-center lg:text-left  ">
         <motion.div
           variants={container}
           initial="hidden"
@@ -94,22 +98,32 @@ export default function ProjectCard({
             variants={slideUp}
             className="flex w-full items-center justify-center lg:justify-end gap-7"
           >
-            <RainbowButton size="icon" variant="default">
-              <Image
-                src="/images/github-mark-white.svg"
-                alt="Github Icon"
-                width={30}
-                height={30}
-                className="pointer-events-none"
-              />
-            </RainbowButton>
+            {githubLink && (
+              <a href={githubLink} target="_blank" rel="noopener noreferrer">
+                <RainbowButton size="icon" variant="default">
+                  <Image
+                    src="/images/github-mark-white.svg"
+                    alt="Github Icon"
+                    width={30}
+                    height={30}
+                    className="pointer-events-none"
+                  />
+                </RainbowButton>
+              </a>
+            )}
 
-            <RainbowButton>{link}</RainbowButton>
+            {projectLink && (
+              <a href={projectLink} target="_blank" rel="noopener noreferrer">
+                <RainbowButton>
+                  {projectLinkText || "Text"}
+                </RainbowButton>
+              </a>
+            )}
           </motion.div>
         </motion.div>
       </div>
 
-      <div className="relative w-full lg:w-2/3 flex items-center justify-center">
+      <div className="relative w-full lg:w-1/2 flex items-center justify-center">
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={slideUp}>
             <Tilt
@@ -127,7 +141,7 @@ export default function ProjectCard({
               <Image
                 src={image}
                 alt={title}
-                className="w-[90%] lg:w-[65%] object-cover h-auto mx-auto"
+                className="w-[90%] lg:w-[75%] object-cover h-auto mx-auto"
               />
             </Tilt>
           </motion.div>

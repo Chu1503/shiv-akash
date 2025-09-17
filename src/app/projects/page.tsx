@@ -12,7 +12,7 @@ import OtherProjects from "@/components/OtherProjects";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import iei_website from "@/assets/iei-website.webp";
 import illumina_website from "@/assets/illumina.webp";
-import soil_website from "@/assets/soil.webp"
+import soil_website from "@/assets/soil.webp";
 
 export default function Projects() {
   return (
@@ -36,34 +36,93 @@ export default function Projects() {
 
       <div className="flex flex-col items-center justify-between w-full px-0 md:px-16 xl:px-36">
         <ProjectCard
-          title="SubTrack"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua"
-          link="Download APK"
-          image={phoneSubtrack}
-        />
-        <ProjectCard
           title="Pennywise"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          link="Visit Website"
+          description={
+            <>
+              An expense tracker that lets users log spending simply by typing
+              it out like a text message.
+              <br />
+              <br />
+              Behind the scenes, it uses text categorization and Named Entity
+              Recognition (NER) to identify the amount, the item, and
+              automatically assign it to the correct category.
+              <br />
+              <br />
+              The app then compiles this information into clear summaries and
+              insights, helping users spot patterns in their spending and make
+              better budgeting decisions without the usual manual effort.
+            </>
+          }
+          githubLink="https://github.com/orgs/Pennywise-Tracker/repositories"
+          projectLink="https://pennywise.app/download"
+          projectLinkText="Download APK"
           image={phonePennywise}
           reverse
         />
         <ProjectCard
-          title="Cinemate"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua"
-          link="Visit Website"
-          image={webCinemate}
+          title="SubTrack"
+          description={
+            <>
+              This app makes it easier to keep track of recurring subscriptions.
+              Users can choose from common services or add their own, set
+              reminders, and fully customize billing cycles down to any duration
+              they want. <br />
+              <br />
+              The focus was on keeping the interface clean and simple, so
+              everything from viewing payment schedules to managing multiple
+              subscriptions feels straightforward and easy to use.
+            </>
+          }
+          githubLink="https://github.com/Chu1503/SubTrack"
+          projectLink="https://pennywise.app/download"
+          projectLinkText="Download APK"
+          image={phoneSubtrack}
         />
         <ProjectCard
           title="PWagon"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua"
-          link="Visit Website"
+          description={
+            <>
+              A deep learning system for real-time license plate detection,
+              built using a convolutional neural network trained on a custom
+              annotated dataset and paired with Google’s OCR for accurate text
+              extraction. <br />
+              <br />
+              The system has been adapted for Amber Alert networks and deployed
+              on a Raspberry Pi 4, capturing images during emergencies and
+              instantly sending alerts. <br />
+              <br />
+              This simple frontend interface lets law enforcement enter
+              suspected license plates, which triggers Amber Alerts around the
+              last known location of the vehicle, enabling real-time monitoring
+              and detection as the system scans for matches.
+            </>
+          }
+          githubLink="https://github.com/orgs/P-Wagon/repositories"
+          projectLink="https://p-wagon-frontend.vercel.app"
+          projectLinkText="Visit Website"
           image={webPwagon}
           reverse
+        />
+        <ProjectCard
+          title="Cinemate"
+          description={
+            <>
+              A web application designed to streamline movie selection for
+              friend groups. Users can create groups, add friends, and vote
+              together on movies, while the system generates recommendations
+              based on the group’s combined genre preferences, cutting
+              decision-making time. <br />
+              <br />
+              This platform also includes a “Where to Watch” feature, showing
+              up-to-date streaming availability with direct links to each movie,
+              making it easy for the group to start watching without hunting for
+              platforms.
+            </>
+          }
+          githubLink="https://github.com/Chu1503/movie-webapp"
+          projectLink="https://cinemate-wa.vercel.app"
+          projectLinkText="Visit Website"
+          image={webCinemate}
         />
         <br /> <br />
         <BentoGrid className="px-4">
@@ -83,11 +142,29 @@ export default function Projects() {
           />
           <BentoGridItem
             title="SOIL ORGANIC CARBON CALCULATOR"
-            description="Website that predicts soil organic carbon using machine learning models like Random Forest, XGBoost, and SVR. Trained on data collected from IIT Madras, it uses inputs like pH, EC, nitrogen, phosphorus, and potassium for real-time predictions."
-            link="Visit Website"
+            description={
+              <>
+                "Website that predicts soil organic carbon using machine
+                learning models like Random Forest, XGBoost, and SVR. <br />{" "}
+                <br />
+                Trained on data collected from IIT Madras, it uses inputs like
+                pH, EC, nitrogen, phosphorus, and potassium for real-time
+                predictions."
+              </>
+            }
+            link="https://soil-organic-carbon.vercel.app"
+            githubLink="https://github.com/Chu1503/soil-ml-backend"
             image={soil_website}
           />
-          {/* <BentoGridItem
+
+          {/* 
+          <BentoGridItem
+            title="INTELLIGIST"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            link="https://www.intelligistgroup.com/"
+            image={test}
+          />
+          <BentoGridItem
             title="RESQMEALS"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             link="Visit Website"
@@ -117,12 +194,7 @@ export default function Projects() {
             link="Visit Website"
             image={test}
           />
-          <BentoGridItem
-            title="INTELLIGIST?"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            link="Visit Website"
-            image={test}
-          /> */}
+           */}
         </BentoGrid>
       </div>
     </main>

@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import GlassCard from "@/components/GlassCard";
+import { ReactNode } from "react";
 
 const slideUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -49,7 +50,7 @@ export const BentoGridItem = ({
 }: {
   className?: string;
   title: string;
-  description: string;
+  description: ReactNode;
   image: StaticImageData;
   link?: string;
   githubLink?: string;
