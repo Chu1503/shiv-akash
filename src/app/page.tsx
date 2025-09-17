@@ -8,7 +8,7 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 import { Particles } from "@/components/magicui/particles";
 // import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { ExternalLink } from "lucide-react";
-import { WavyBackground } from "@/components/ui/wavy-background";
+// import { WavyBackground } from "@/components/ui/wavy-background";
 
 const container = {
   hidden: {},
