@@ -7,8 +7,6 @@ import webCinemate from "@/assets/web_cinemate.webp";
 import webPwagon from "@/assets/web_pwagon.webp";
 // import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { Particles } from "@/components/magicui/particles";
-import test from "@/assets/test.png";
-import OtherProjects from "@/components/OtherProjects";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import iei_website from "@/assets/iei-website.webp";
 import illumina_website from "@/assets/illumina.webp";
