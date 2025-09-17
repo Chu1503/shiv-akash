@@ -92,8 +92,8 @@ export default function Home() {
               variants={slideUp}
               className="text-lg sm:text-xl mx-auto tracking-wide font-normal text-[#bbbbbb]"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
             </motion.p>
             <motion.div variants={slideUp}>
               <Link href="/Shiv-Akash-Resume.pdf" target="_blank" download>

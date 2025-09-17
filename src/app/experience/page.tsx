@@ -31,7 +31,7 @@ export default function Experience() {
               </h2>
               <div className="flex flex-col xl:flex-row justify-between my-4">
                 <p className="text-lg lg:text-xl mb-2 xl:mb-0">
-                  Incoming Student
+                  {/* Incoming Student */}
                 </p>
                 <p className="text-md lg:text-xl">2025 – 2027</p>
               </div>
@@ -72,16 +72,16 @@ export default function Experience() {
                 Padma Seshadri Bala Bhavan, Chennai
               </h2>
               <h2 className="text-lg xl:text-xl font-normal mt-3">
-                CBSE - Physics, Chemistry, Biology
+                CBSE - Physics, Chemistry, Math, Biology
               </h2>
               <div className="flex flex-col xl:flex-row justify-between my-4">
-                <p className="text-lg lg:text-xl mb-2 xl:mb-0">95.4%</p>
+                <p className="text-lg lg:text-xl mb-2 xl:mb-0">Grade: 95.6%</p>
                 <p className="text-md lg:text-xl">2006 – 2021</p>
               </div>
             </div>
           </RainbowButton>
         </div>
-
+        <div className="mt-5"></div>
         <Timeline />
       </main>
     </>
