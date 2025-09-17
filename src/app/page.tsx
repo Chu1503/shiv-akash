@@ -6,9 +6,9 @@ import Link from "next/link";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { Particles } from "@/components/magicui/particles";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
+// import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { ExternalLink } from "lucide-react";
-// import { Vortex } from "@/components/ui/vortex";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const container = {
   hidden: {},
@@ -33,16 +33,14 @@ const slideUp = {
 
 export default function Home() {
   return (
-    <main className="flex items-center w-screen py-3 md:py-10 xl:py-16 bg-black">
-      <div className="absolute inset-0 z-0 overflow-hidden w-full h-full hidden lg:block">
+    // <main className="flex items-center w-screen py-3 md:py-10 xl:py-32 bg-black">
+    <main className="flex items-center w-screen py-3 md:py-10 xl:py-32 bg-black">
+      {/* <div className="absolute bottom-0 left-0 max-w-[99vw] max-h-[99vh] z-0 translate-y-1/5">
+        <WavyBackground />
+      </div> */}
+
+      <div className="absolute inset-0 z-1 overflow-hidden w-full h-full hidden lg:block">
         <Particles />
-        <InteractiveGridPattern />
-        {/* <Vortex
-          backgroundColor="black"
-          rangeY={800}
-          particleCount={100}
-          baseHue={220}
-        /> */}
       </div>
 
       {/* Noise Texture */}
@@ -59,7 +57,8 @@ export default function Home() {
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
       </svg> */}
 
-      <div className="flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-16 xl:px-36">
+      {/* <div className="flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-16 xl:px-36"> */}
+      <div className="flex flex-col items-center justify-center w-full text-center z-10">
         <div className="w-full md:w-2/3 xl:w-2/3">
           <motion.div
             variants={container}
@@ -95,7 +94,10 @@ export default function Home() {
               {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
             </motion.p>
-            <motion.div variants={slideUp}>
+            <motion.div
+              variants={slideUp}
+              className="flex items-center justify-center gap-12"
+            >
               <Link href="/Shiv-Akash-Resume.pdf" target="_blank" download>
                 <ShimmerButton>
                   <span className="flex items-center gap-2 text-sm md:text-lg">
@@ -104,11 +106,17 @@ export default function Home() {
                   </span>
                 </ShimmerButton>
               </Link>
+
+              <Link href="https://github.com/Chu1503" target="_blank">
+                <ShimmerButton>
+                  <span className="flex items-center gap-2 text-sm md:text-lg">
+                    GitHub
+                    <ExternalLink className="h-4 w-4" />
+                  </span>
+                </ShimmerButton>
+              </Link>
             </motion.div>
           </motion.div>
-        </div>
-        <div className="w-full md:w-1/3 xl:w-1/3 flex items-center justify-center h-[250px] md:h-[325px] xl:h-[475px] mt-4 sm:mt-0">
-          {/* <Chu /> */}
         </div>
       </div>
     </main>

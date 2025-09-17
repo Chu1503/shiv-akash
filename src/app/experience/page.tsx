@@ -53,7 +53,7 @@ export default function Experience() {
               </h2>
               <div className="flex flex-col xl:flex-row justify-between my-4">
                 <p className="text-lg lg:text-xl mb-2 xl:mb-0">
-                  CGPA: 9.17 / 10.00
+                  CGPA: 9.17 / 10
                 </p>
                 <p className="text-md lg:text-xl">2021 – 2025</p>
               </div>
@@ -72,7 +72,7 @@ export default function Experience() {
                 Padma Seshadri Bala Bhavan, Chennai
               </h2>
               <h2 className="text-lg xl:text-xl font-normal mt-3">
-                CBSE - Physics, Chemistry, Math, Biology
+                Physics, Chemistry, Math, Biology
               </h2>
               <div className="flex flex-col xl:flex-row justify-between my-4">
                 <p className="text-lg lg:text-xl mb-2 xl:mb-0">Grade: 95.6%</p>
