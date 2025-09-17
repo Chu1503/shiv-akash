@@ -52,7 +52,7 @@ export default function Projects() {
             </>
           }
           githubLink="https://github.com/orgs/Pennywise-Tracker/repositories"
-          projectLink="https://pennywise.app/download"
+          projectLink="https://drive.google.com/file/d/1Vg-ov8wLXYyJwWYyiRmroyqySIlAC1Eg/view?usp=sharing"
           projectLinkText="Download APK"
           image={phonePennywise}
           reverse
@@ -72,7 +72,7 @@ export default function Projects() {
             </>
           }
           githubLink="https://github.com/Chu1503/SubTrack"
-          projectLink="https://pennywise.app/download"
+          projectLink="https://drive.google.com/file/d/1Ya5JBSgj_WuxhyKD7yds32HAPrx9nVHc/view?usp=sharing"
           projectLinkText="Download APK"
           image={phoneSubtrack}
         />
