@@ -143,7 +143,7 @@ export default function Projects() {
             description={
               <>
                 "Website that predicts soil organic carbon using machine
-                learning models like Random Forest, XGBoost, and SVR. <br />{" "}
+                learning models like Random Forest, XGBoost, and SVR. <br />
                 <br />
                 Trained on data collected from IIT Madras, it uses inputs like
                 pH, EC, nitrogen, phosphorus, and potassium for real-time
