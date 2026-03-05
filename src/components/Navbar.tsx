@@ -6,16 +6,19 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
+
 type CustomLinkProps = {
   href: string;
   title: string;
   className?: string;
+  target?: string;
   onClick?: () => void;
 };
 
 const CustomLink = ({
   href,
   title,
+  target,
   className = "",
   onClick,
 }: CustomLinkProps) => {
@@ -43,7 +46,12 @@ const CustomLink = ({
   }
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link
+      href={href}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      className={`${className} relative group`}
+    >
       <span className="relative z-10">{title}</span>
       <span
         className={`absolute left-0 -bottom-0.5 h-[2px] bg-white transition-all duration-300 ease-in-out
@@ -54,6 +62,8 @@ const CustomLink = ({
 };
 
 const Navbar = () => {
+  const pathname = usePathname();
+  if (pathname === "/") return null;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -73,13 +83,9 @@ const Navbar = () => {
         <div className="absolute inset-0 rounded-[30px] z-10 pointer-events-none shadow-[inset_2px_2px_0px_-2px_rgba(255,255,255,0.7),inset_0_0_3px_1px_rgba(255,255,255,0.7)]" />
         <div className="absolute inset-0 rounded-[30px] -z-10 [filter:url(#container-glass)] backdrop-blur-0" />
         <nav className="flex gap-30">
-          {/* <CustomLink href="/about" title="About" /> */}
           <CustomLink href="/experience" title="Experience" />
-          <Link href="/" className="mx-10">
-            Shiv Akash
-          </Link>
+          <CustomLink href="/" title="Home" />
           <CustomLink href="/projects" title="Projects" />
-          {/* <CustomLink href="/contact" title="Contact" /> */}
         </nav>
       </div>
 
@@ -103,11 +109,6 @@ const Navbar = () => {
                 title="Home"
                 onClick={() => setIsOpen(false)}
               />
-              {/* <CustomLink
-                href="/about"
-                title="About"
-                onClick={() => setIsOpen(false)}
-              /> */}
               <CustomLink
                 href="/experience"
                 title="Experience"
@@ -118,11 +119,6 @@ const Navbar = () => {
                 title="Projects"
                 onClick={() => setIsOpen(false)}
               />
-              {/* <CustomLink
-                href="/contact"
-                title="Contact"
-                onClick={() => setIsOpen(false)}
-              /> */}
             </nav>
           </motion.div>
         )}

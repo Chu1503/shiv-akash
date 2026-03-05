@@ -6,8 +6,15 @@ import Link from "next/link";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { Particles } from "@/components/magicui/particles";
-import { ExternalLink } from "lucide-react";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
+import { FileText, Github, Linkedin, Mail, BookOpen } from "lucide-react";
+import { Dock, DockIcon } from "@/components/ui/dock";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const container = {
   hidden: {},
@@ -30,6 +37,15 @@ const slideUp = {
   },
 };
 
+export type IconProps = React.SVGProps<SVGSVGElement>;
+
+const Icons = {
+  resume: (props: IconProps) => <FileText {...props} />,
+  gitHub: (props: IconProps) => <Github {...props} />,
+  linkedIn: (props: IconProps) => <Linkedin {...props} />,
+  email: (props: IconProps) => <Mail {...props} />,
+};
+
 export default function Home() {
   return (
     // <main className="flex items-center w-screen py-3 md:py-10 xl:py-32 bg-black">
@@ -38,26 +54,11 @@ export default function Home() {
         <WavyBackground />
       </div> */}
 
-      <div className="absolute inset-0 z-1 overflow-hidden w-full h-full hidden lg:block">
+      <div className="absolute inset-0 z-1 overflow-hidden w-full h-full">
         <Particles />
         <InteractiveGridPattern />
       </div>
 
-      {/* Noise Texture */}
-      {/* <svg className="absolute inset-0 h-full w-full opacity-20">
-        <filter id="noiseFilter">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.65"
-            numOctaves="3"
-            stitchTiles="stitch"
-          />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-      </svg> */}
-
-      {/* <div className="flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-16 xl:px-36"> */}
       <div className="flex flex-col items-center justify-center w-full text-center z-10 px-5">
         <div className="w-full md:w-2/3 xl:w-2/3">
           <motion.div
@@ -87,55 +88,146 @@ export default function Home() {
             >
               I{"'"}m <AuroraText>Shiv Akash</AuroraText>
             </motion.h1>
-            <motion.p
-              variants={slideUp}
-              className="text-lg sm:text-xl mx-auto tracking-wide font-normal text-[#bbbbbb]"
-            >
-              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
-            </motion.p>
             <motion.div
               variants={slideUp}
               className="flex flex-col gap-12 items-center px-5"
             >
-              <div className="flex gap-28">
-                <Link href="/Shiv_Akash_Resume.pdf" target="_blank" download>
+              <div className="flex gap-16 mt-4">
+                <Link href="/experience">
                   <ShimmerButton>
                     <span className="flex items-center gap-2 text-sm md:text-lg">
-                      Resume
-                      <ExternalLink className="h-4 w-4" />
+                      Experience
                     </span>
                   </ShimmerButton>
                 </Link>
 
-                <Link href="https://github.com/Chu1503" target="_blank">
+                <Link href="/publications">
                   <ShimmerButton>
                     <span className="flex items-center gap-2 text-sm md:text-lg">
-                      GitHub
-                      <ExternalLink className="h-4 w-4" />
+                      Publications
                     </span>
                   </ShimmerButton>
                 </Link>
               </div>
 
               <div className="flex gap-12">
-                <Link href="https://www.linkedin.com/in/shiv-akash" target="_blank">
+                <Link href="/projects">
                   <ShimmerButton>
                     <span className="flex items-center gap-2 text-sm md:text-lg">
-                      LinkedIn
-                      <ExternalLink className="h-4 w-4" />
+                      Projects
                     </span>
                   </ShimmerButton>
                 </Link>
+              </div>
 
-                <Link href="mailto:shivakash7333@gmail.com" target="_blank">
-                  <ShimmerButton>
-                    <span className="flex items-center gap-2 text-sm md:text-lg">
-                      Email
-                      <ExternalLink className="h-4 w-4" />
-                    </span>
-                  </ShimmerButton>
-                </Link>
+              <div className="relative">
+                <TooltipProvider delayDuration={80}>
+                  <Dock direction="middle">
+                    <DockIcon>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a
+                            href="/Shiv_Akash_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Resume"
+                            className="flex items-center justify-center rounded-full p-3"
+                          >
+                            <FileText
+                              className="size-6 text-white/80 transition group-hover:text-white"
+                              strokeWidth={1.5}
+                            />
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent
+                          side="top"
+                          sideOffset={10}
+                          className="border-white/10 bg-black/70 text-white backdrop-blur-md"
+                        >
+                          <p>Resume</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </DockIcon>
+
+                    <DockIcon>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a
+                            href="https://github.com/Chu1503"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            className="flex items-center justify-center rounded-full p-3"
+                          >
+                            <Github
+                              className="size-6 text-white/80 transition"
+                              strokeWidth={1.5}
+                            />
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent
+                          side="top"
+                          sideOffset={10}
+                          className="border-white/10 bg-black/70 text-white backdrop-blur-md"
+                        >
+                          <p>GitHub</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </DockIcon>
+
+                    <DockIcon>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a
+                            href="https://www.linkedin.com/in/shiv-akash/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            className="flex items-center justify-center rounded-full p-3"
+                          >
+                            <Linkedin
+                              className="size-6 text-white/80 transition"
+                              strokeWidth={1.5}
+                            />
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent
+                          side="top"
+                          sideOffset={10}
+                          className="border-white/10 bg-black/70 text-white backdrop-blur-md"
+                        >
+                          <p>LinkedIn</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </DockIcon>
+
+                    <DockIcon>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a
+                            href="mailto:shivakash7333@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            className="flex items-center justify-center rounded-full p-3"
+                          >
+                            <Mail
+                              className="size-6 text-white/80 transition"
+                              strokeWidth={1.5}
+                            />
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent
+                          side="top"
+                          sideOffset={10}
+                          className="border-white/10 bg-black/70 text-white backdrop-blur-md"
+                        >
+                          <p>Email</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </DockIcon>
+                  </Dock>
+                </TooltipProvider>
               </div>
             </motion.div>
           </motion.div>
