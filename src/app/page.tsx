@@ -3,12 +3,12 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { Particles } from "@/components/magicui/particles";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { FileText, Github, Linkedin, Mail, BookOpen } from "lucide-react";
 import { Dock, DockIcon } from "@/components/ui/dock";
+
 import {
   Tooltip,
   TooltipContent,
@@ -48,12 +48,7 @@ const Icons = {
 
 export default function Home() {
   return (
-    // <main className="flex items-center w-screen py-3 md:py-10 xl:py-32 bg-black">
     <main className="flex items-center w-screen py-3 md:py-10 xl:py-32 bg-black">
-      {/* <div className="absolute bottom-0 left-0 max-w-[99vw] max-h-[99vh] z-0 translate-y-1/5">
-        <WavyBackground />
-      </div> */}
-
       <div className="absolute inset-0 z-1 overflow-hidden w-full h-full">
         <Particles />
         <InteractiveGridPattern />
@@ -92,31 +87,48 @@ export default function Home() {
               variants={slideUp}
               className="flex flex-col gap-12 items-center px-5"
             >
-              <div className="flex gap-16 mt-4">
+              <div className="flex gap-10 mt-4">
+                <Link href="/education">
+                  <div
+                    className="relative w-fit rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                    transition-all duration-200 hover:border-white/30 hover:bg-white/10 flex items-center justify-center"
+                  >
+                    <div className="text-white px-5 py-2 rounded-full">
+                      Education
+                    </div>
+                  </div>
+                </Link>
+
                 <Link href="/experience">
-                  <ShimmerButton>
-                    <span className="flex items-center gap-2 text-sm md:text-lg">
+                  <div
+                    className="relative w-fit rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                    transition-all duration-200 hover:border-white/30 hover:bg-white/10 flex items-center justify-center"
+                  >
+                    <div className="text-white px-5 py-2 rounded-full">
                       Experience
-                    </span>
-                  </ShimmerButton>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/projects">
+                  <div
+                    className="relative w-fit rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                    transition-all duration-200 hover:border-white/30 hover:bg-white/10 flex items-center justify-center"
+                  >
+                    <div className="text-white px-5 py-2 rounded-full">
+                      Projects
+                    </div>
+                  </div>
                 </Link>
 
                 <Link href="/publications">
-                  <ShimmerButton>
-                    <span className="flex items-center gap-2 text-sm md:text-lg">
+                  <div
+                    className="relative w-fit rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                    transition-all duration-200 hover:border-white/30 hover:bg-white/10 flex items-center justify-center"
+                  >
+                    <div className="text-white px-5 py-2 rounded-full">
                       Publications
-                    </span>
-                  </ShimmerButton>
-                </Link>
-              </div>
-
-              <div className="flex gap-12">
-                <Link href="/projects">
-                  <ShimmerButton>
-                    <span className="flex items-center gap-2 text-sm md:text-lg">
-                      Projects
-                    </span>
-                  </ShimmerButton>
+                    </div>
+                  </div>
                 </Link>
               </div>
 

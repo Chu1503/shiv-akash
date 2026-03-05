@@ -15,28 +15,27 @@ export default function Experience() {
           <Particles />
         </div>
         <div className="relative flex items-center justify-center w-full bg-black overflow-hidden gap-20 lg:gap-10 xl:gap-20 flex-col lg:flex-row">
-          <RainbowButton
+        <RainbowButton
             size="fit"
             className="flex flex-col w-[275px] sm:w-[500px] lg:w-[275px] xl:w-[400px] whitespace-normal break-words before:hidden"
           >
             <div className="h-[300px]">
-              <ChuGB />
+              <ChuKB />
             </div>
             <div className="w-full px-4 text-white text-center">
               <h2 className="text-2xl font-bold">
-                University of Wisconsin - Madison
+                Padma Seshadri Bala Bhavan, Chennai
               </h2>
               <h2 className="text-lg xl:text-xl font-normal mt-3">
-                MS Data Science
+                CBSE
               </h2>
               <div className="flex flex-col xl:flex-row justify-between my-4">
-                <p className="text-lg lg:text-xl mb-2 xl:mb-0">
-                  {/* Incoming Student */}
-                </p>
-                <p className="text-md lg:text-xl">2025 – 2027</p>
+                <p className="text-lg lg:text-xl mb-2 xl:mb-0">Grade: 95.6%</p>
+                <p className="text-md lg:text-xl">2006 – 2021</p>
               </div>
             </div>
           </RainbowButton>
+          
           <RainbowButton
             size="fit"
             className="flex flex-col w-[275px] sm:w-[500px] lg:w-[275px] xl:w-[400px] whitespace-normal break-words before:hidden"
@@ -49,7 +48,7 @@ export default function Experience() {
                 Vellore Institute of Technology, Vellore
               </h2>
               <h2 className="text-lg xl:text-xl font-normal mt-3">
-                B.Tech - Electronics & Communication Engineering
+                B.Tech ECE
               </h2>
               <div className="flex flex-col xl:flex-row justify-between my-4">
                 <p className="text-lg lg:text-xl mb-2 xl:mb-0">
@@ -65,18 +64,18 @@ export default function Experience() {
             className="flex flex-col w-[275px] sm:w-[500px] lg:w-[275px] xl:w-[400px] whitespace-normal break-words before:hidden"
           >
             <div className="h-[300px]">
-              <ChuKB />
+              <ChuGB />
             </div>
             <div className="w-full px-4 text-white text-center">
               <h2 className="text-2xl font-bold">
-                Padma Seshadri Bala Bhavan, Chennai
+                University of Wisconsin, Madison
               </h2>
               <h2 className="text-lg xl:text-xl font-normal mt-3">
-                Physics, Chemistry, Math, Biology
+                MS Data Science
               </h2>
               <div className="flex flex-col xl:flex-row justify-between my-4">
-                <p className="text-lg lg:text-xl mb-2 xl:mb-0">Grade: 95.6%</p>
-                <p className="text-md lg:text-xl">2006 – 2021</p>
+                <p className="text-lg lg:text-xl mb-2 xl:mb-0">GPA: 3.66 / 4</p>
+                <p className="text-md lg:text-xl">2025 – 2027</p>
               </div>
             </div>
           </RainbowButton>

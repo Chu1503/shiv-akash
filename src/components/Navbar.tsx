@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-
 type CustomLinkProps = {
   href: string;
   title: string;
@@ -63,8 +62,10 @@ const CustomLink = ({
 
 const Navbar = () => {
   const pathname = usePathname();
-  if (pathname === "/") return null;
+
   const [isOpen, setIsOpen] = useState(false);
+
+  if (pathname === "/") return null;
 
   const handleClick = () => {
     setIsOpen(!isOpen);
