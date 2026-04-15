@@ -34,6 +34,30 @@ export default function Projects() {
 
       <div className="flex flex-col items-center justify-between w-full px-0 md:px-16 xl:px-36">
         <ProjectCard
+          title="MarketMurmur"
+          description={
+            <>
+            MarketMurmur is a market intelligence platform where you can search any public company and instantly get a clean,
+            all-in-one view of what’s going on. It pulls together stock price trends, key financial 
+            metrics like revenue growth and margins, and recent news sentiment into a single dashboard. 
+            You can also compare companies side by side to quickly see how they stack up against competitors.
+            <br />
+            <br />
+            It also has a Hype vs Fundamentals Score that looks at how much attention a company is
+             getting versus how strong its actual performance is. By combining signals like news volume, 
+             sentiment, price movement, and financial data, it shows whether a company is 
+             overhyped, undervalued, or fairly aligned. Everything is kept up to date 
+             through automated pipelines powered by n8n, with a live leaderboard that ranks 
+             companies based on this gap.
+            </>
+          }
+          githubLink="https://github.com/Chu1503/marketmurmur"
+          projectLink="https://marketmurmur.vercel.app/"
+          projectLinkText="Visit Website"
+          image={phonePennywise}
+          reverse
+        />
+        <ProjectCard
           title="Pennywise"
           description={
             <>

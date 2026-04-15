@@ -39,12 +39,12 @@ const navLinks = [
 ];
 
 const dockLinks = [
-  {
-    label: "Resume",
-    href: "/Shiv_Akash_Resume.pdf",
-    Icon: FileText,
-    external: true,
-  },
+  // {
+  //   label: "Resume",
+  //   href: "/Shiv_Akash_Resume.pdf",
+  //   Icon: FileText,
+  //   external: true,
+  // },
   {
     label: "GitHub",
     href: "https://github.com/Chu1503",
