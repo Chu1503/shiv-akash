@@ -15,6 +15,7 @@ type ProjectCardProps = {
   githubLink?: string;
   projectLink?: string;
   projectLinkText?: string;
+  textAlign?: "left" | "right" | "center";
 };
 
 const container = {
@@ -46,6 +47,7 @@ export default function ProjectCard({
   githubLink,
   projectLink,
   projectLinkText,
+  textAlign = "center",
 }: ProjectCardProps) {
   const [angleX, setAngleX] = useState(0);
   const [angleY, setAngleY] = useState(0);
@@ -75,7 +77,15 @@ export default function ProjectCard({
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       } items-center w-full px-4 md:px-16 xl:px-24 mb-20 gap-10`}
     >
-      <div className="w-full lg:w-1/2 text-center lg:text-left  ">
+      <div
+        className={`w-full lg:w-1/2 ${
+          textAlign === "left"
+            ? "text-left"
+            : textAlign === "right"
+            ? "text-right"
+            : "text-center"
+        }`}
+      >
         <motion.div
           variants={container}
           initial="hidden"
@@ -96,7 +106,13 @@ export default function ProjectCard({
           </motion.p>
           <motion.div
             variants={slideUp}
-            className="flex w-full items-center justify-center lg:justify-end gap-7"
+            className={`flex w-full items-center gap-7 ${
+              textAlign === "left"
+                ? "justify-start"
+                : textAlign === "right"
+                ? "justify-end"
+                : "justify-center"
+            }`}
           >
             {githubLink && (
               <a href={githubLink} target="_blank" rel="noopener noreferrer">
@@ -114,9 +130,7 @@ export default function ProjectCard({
 
             {projectLink && (
               <a href={projectLink} target="_blank" rel="noopener noreferrer">
-                <RainbowButton>
-                  {projectLinkText || "Text"}
-                </RainbowButton>
+                <RainbowButton>{projectLinkText || "Text"}</RainbowButton>
               </a>
             )}
           </motion.div>

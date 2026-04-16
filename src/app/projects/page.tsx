@@ -4,12 +4,17 @@ import ProjectCard from "@/components/ProjectCard";
 import phonePennywise from "@/assets/phone_pennywise.webp";
 import phoneSubtrack from "@/assets/phone_subtrack_2.webp";
 import webCinemate from "@/assets/web_cinemate.webp";
+import webMarketMurmur from "@/assets/web_mm.webp";
+import webJasper from "@/assets/web_jasper.webp";
 import webPwagon from "@/assets/web_pwagon.webp";
 // import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { Particles } from "@/components/magicui/particles";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import iei_website from "@/assets/iei-website.webp";
-import illumina_website from "@/assets/illumina.webp";
+import cinemate_website from "@/assets/cinemate.webp";
+import invisible_patient_website from "@/assets/invisible_patient.webp";
+import ipl_website from "@/assets/ipl_website.webp";
+import illumina_website from "@/assets/illumina-no-nav.webp";
 import soil_website from "@/assets/soil.webp";
 
 export default function Projects() {
@@ -35,44 +40,59 @@ export default function Projects() {
       <div className="flex flex-col items-center justify-between w-full px-0 md:px-16 xl:px-36">
         <ProjectCard
           title="MarketMurmur"
+          textAlign="left"
           description={
             <>
-            MarketMurmur is a market intelligence platform where you can search any public company and instantly get a clean,
-            all-in-one view of what’s going on. It pulls together stock price trends, key financial 
-            metrics like revenue growth and margins, and recent news sentiment into a single dashboard. 
-            You can also compare companies side by side to quickly see how they stack up against competitors.
-            <br />
-            <br />
-            It also has a Hype vs Fundamentals Score that looks at how much attention a company is
-             getting versus how strong its actual performance is. By combining signals like news volume, 
-             sentiment, price movement, and financial data, it shows whether a company is 
-             overhyped, undervalued, or fairly aligned. Everything is kept up to date 
-             through automated pipelines powered by n8n, with a live leaderboard that ranks 
-             companies based on this gap.
+              MarketMurmur is a market intelligence platform where you can
+              search any public company and instantly get a clear, all in one
+              view of what's going on. It brings together stock price trends,
+              key financial metrics, and recent news sentiment into a single
+              dashboard.
+              <br />
+              <br />
+              Under the hood, it runs automated data pipelines using n8n to
+              handle continuous data ingestion, transformation, and storage of
+              stock data, financials, and news into a centralized PostgreSQL
+              database. Each news article is processed with setiment analysis,
+              and all signals are normalized and combined into a Hype vs
+              Fundamentals score that flags companies as overhyped, undervalued,
+              or aligned.
             </>
           }
           githubLink="https://github.com/Chu1503/marketmurmur"
-          projectLink="https://marketmurmur.vercel.app/"
+          projectLink="https://marketmurmur.vercel.app"
           projectLinkText="Visit Website"
-          image={phonePennywise}
+          image={webMarketMurmur}
           reverse
         />
         <ProjectCard
+          title="F1 Race Intelligence"
+          textAlign="right"
+          description={<>F1 Race Intelligence</>}
+          githubLink="https://github.com/Chu1503/marketmurmur"
+          projectLink="https://marketmurmur.vercel.app"
+          projectLinkText="Visit Website"
+          image={webMarketMurmur}
+        />
+        <ProjectCard
           title="Pennywise"
+          textAlign="left"
           description={
             <>
-              An expense tracker that lets users log spending simply by typing
-              it out like a text message.
+              An expense tracker built with React Native that lets users log
+              spending naturally, just by typing it like a text message.
               <br />
               <br />
-              Behind the scenes, it uses text categorization and Named Entity
-              Recognition (NER) to identify the amount, the item, and
-              automatically assign it to the correct category.
+              Behind the scenes, it runs a text-based expense ingestion pipeline
+              using NLP techniques, including Named Entity Recognition (NER), to
+              extract key details like amount and item and convert them into
+              structured transaction records for automated categorization and
+              spending analysis.
               <br />
               <br />
-              The app then compiles this information into clear summaries and
-              insights, helping users spot patterns in their spending and make
-              better budgeting decisions without the usual manual effort.
+              The app then compiles everything into clear summaries and
+              insights, helping users understand patterns in their spending and
+              make better budgeting decisions without manual effort.
             </>
           }
           githubLink="https://github.com/orgs/Pennywise-Tracker/repositories"
@@ -83,6 +103,7 @@ export default function Projects() {
         />
         <ProjectCard
           title="SubTrack"
+          textAlign="right"
           description={
             <>
               This app makes it easier to keep track of recurring subscriptions.
@@ -102,72 +123,81 @@ export default function Projects() {
         />
         <ProjectCard
           title="PWagon"
+          textAlign="left"
           description={
             <>
-              A deep learning system for real-time license plate detection,
-              built using a convolutional neural network trained on a custom
-              annotated dataset and paired with Google’s OCR for accurate text
-              extraction. <br />
+              A deep learning system for real time license plate detection that
+              lets you post a "wanted vehicle" and instantly start tracking it
+              across a network of cameras. Raspberry Pi devices scan live feeds,
+              detect plates using a convolutional neural network trained on a
+              custom image dataset, and use Google OCR to extract text and log
+              sightings with time and location.
               <br />
-              The system has been adapted for Amber Alert networks and deployed
-              on a Raspberry Pi 4, capturing images during emergencies and
-              instantly sending alerts. <br />
               <br />
-              This simple frontend interface lets law enforcement enter
-              suspected license plates, which triggers Amber Alerts around the
-              last known location of the vehicle, enabling real-time monitoring
-              and detection as the system scans for matches.
+              Deployed for Amber Alert style workflows, it turns simple cameras
+              into an automated monitoring system where alerts trigger instantly
+              and matches are detected in real time, removing the need for
+              manual footage review and enabling fast response when it matters
+              most.
             </>
           }
           githubLink="https://github.com/orgs/P-Wagon/repositories"
-          projectLink="https://p-wagon-frontend.vercel.app"
+          projectLink="https://p-wagon.vercel.app/"
           projectLinkText="Visit Website"
           image={webPwagon}
           reverse
         />
         <ProjectCard
-          title="Cinemate"
+          title="Jasper.AI"
+          textAlign="right"
           description={
             <>
-              A web application designed to streamline movie selection for
-              friend groups. Users can create groups, add friends, and vote
-              together on movies, while the system generates recommendations
-              based on the group’s combined genre preferences, cutting
-              decision-making time. <br />
+              Jasper.AI is an interview prep platform that builds a fully
+              personalized roadmap based on your target company, role, timeline,
+              and daily availability so no two candidates get the same plan.
               <br />
-              This platform also includes a “Where to Watch” feature, showing
-              up-to-date streaming availability with direct links to each movie,
-              making it easy for the group to start watching without hunting for
-              platforms.
+              <br />
+              It uses LLM pipelines to research real interview questions from
+              Reddit, Glassdoor, and LeetCode, prioritizes high impact weak
+              areas using your confidence scores, and guides you day by day. You
+              can practice through live voice-based mock interviews, where a
+              feedback loop evaluates your responses and iteratively refines
+              prompts based on adaptive assessment, providing structured, scored
+              feedback.
             </>
           }
-          githubLink="https://github.com/Chu1503/movie-webapp"
-          projectLink="https://cinemate-wa.vercel.app"
+          githubLink="https://github.com/MadHacks26/Jasper.AI"
+          projectLink="https://jasper-one.vercel.app/"
           projectLinkText="Visit Website"
-          image={webCinemate}
+          image={webJasper}
         />
         <br /> <br />
         <BentoGrid className="px-4">
           <BentoGridItem
-            title="IEI WEBSITE"
-            description="Official website of the IE(I) VIT Student Chapter."
-            link="https://ieivit.vercel.app"
-            githubLink="https://github.com/Chu1503/iei-website"
-            image={iei_website}
-          />
-          <BentoGridItem
-            title="ILLUMINA"
-            description="Official website for Illumina, a hackathon organized by IE(I) VIT. Participants can register and form teams on the website."
-            link="https://illumina.vercel.app"
-            githubLink="https://github.com/Chu1503/illumina_2.0_website"
-            image={illumina_website}
+            title="THE INVISIBLE PATIENT"
+            description={
+              <>
+                An AI powered mental health companion for caregivers that offers
+                voice or text check-ins. It runs a ZBI based burnout assessment
+                naturally through conversation and tracks emotional patterns
+                using a proprietary Resonance Score.
+                <br />
+                <br />
+                It detects crisis signals in real time and includes an anonymous
+                peer support forum. All data is handled in a privacy first, zero
+                friction experience that helps catch caregiver burnout early.
+              </>
+            }
+            link="https://github.com/Chu1503/invisible-patient"
+            githubLink="https://invisible-patient.vercel.app"
+            image={invisible_patient_website}
           />
           <BentoGridItem
             title="SOIL ORGANIC CARBON CALCULATOR"
             description={
               <>
-                Website that predicts soil organic carbon using machine
-                learning models like Random Forest, XGBoost, and SVR. <br />
+                Website that predicts soil organic carbon using machine learning
+                models like Random Forest, XGBoost, and SVR. <br />
                 <br />
                 Trained on data collected from IIT Madras, it uses inputs like
                 pH, EC, nitrogen, phosphorus, and potassium for real-time
@@ -179,6 +209,67 @@ export default function Projects() {
             image={soil_website}
           />
 
+          <BentoGridItem
+            title="CINEMATE"
+            description={
+              <>
+                {/* A web application designed to streamline movie selection for
+                friend groups. Users can create groups, add friends, and vote
+                together on movies, while the system generates recommendations
+                based on the group's combined genre preferences, cutting
+                decision-making time. <br />
+                <br />
+                This platform also includes a “Where to Watch” feature, showing
+                up-to-date streaming availability with direct links to each
+                movie, making it easy for the group to start watching without
+                hunting for platforms. */}
+                A web app for group movie decisions where users create groups,
+                add friends, vote on films, and get recommendations based on
+                shared preferences, with a “Where to Watch” feature providing up
+                to date streaming links.
+              </>
+            }
+            link="https://cinemate-wa.vercel.app"
+            githubLink="https://github.com/Chu1503/movie-webapp"
+            image={cinemate_website}
+          />
+
+          <BentoGridItem
+            title="IEI WEBSITE"
+            description="Official website of the IE(I) VIT Student Chapter."
+            link="https://ieivit.vercel.app"
+            githubLink="https://github.com/Chu1503/iei-website"
+            image={iei_website}
+          />
+          <BentoGridItem
+            title="IPL BEST XI ANALYTICS DASHBOARD"
+            description={
+              <>
+                Scrapes every IPL 2024 match scorecard from ESPN Cricinfo across
+                72 games, cleans and structures 1,900+ batting and bowling
+                records using Python, and feeds them into a Power BI dashboard
+                for interactive analysis.
+                <br />
+                <br />
+                The dashboard enables cross-functional insights into player
+                performance, helping users explore trends and objectively
+                identify the tournament's best XI based purely on data rather
+                than opinion.
+              </>
+            }
+            // link="https://github.com/Chu1503/invisible-patient"
+            // githubLink="https://invisible-patient.vercel.app"
+            image={ipl_website}
+          />
+
+          <BentoGridItem
+            title="ILLUMINA"
+            description="Official website for Illumina, a hackathon organized by IE(I) VIT. Participants can register and form teams on the website."
+            link="https://illumina.vercel.app"
+            githubLink="https://github.com/Chu1503/illumina_2.0_website"
+            image={illumina_website}
+          />
+
           {/* 
           <BentoGridItem
             title="INTELLIGIST"
@@ -186,6 +277,7 @@ export default function Projects() {
             link="https://www.intelligistgroup.com/"
             image={test}
           />
+          
           <BentoGridItem
             title="RESQMEALS"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
