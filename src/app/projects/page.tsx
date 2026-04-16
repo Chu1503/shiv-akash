@@ -7,6 +7,7 @@ import webCinemate from "@/assets/web_cinemate.webp";
 import webMarketMurmur from "@/assets/web_mm.webp";
 import webJasper from "@/assets/web_jasper.webp";
 import webPwagon from "@/assets/web_pwagon.webp";
+import webf1 from "@/assets/web_f1.webp";
 // import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { Particles } from "@/components/magicui/particles";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
@@ -68,11 +69,26 @@ export default function Projects() {
         <ProjectCard
           title="F1 Race Intelligence"
           textAlign="right"
-          description={<>F1 Race Intelligence</>}
-          githubLink="https://github.com/Chu1503/marketmurmur"
-          projectLink="https://marketmurmur.vercel.app"
+          description={
+            <>
+              A race analytics platform to explore Formula 1 races, from lap
+              times and tyre strategy to pit stops and results, all in one
+              place. It also generates AI driven strategy recommendations and
+              race commentary based on real race scenarios
+              <br />
+              <br />
+              Built on a data pipeline powered by Kafka and Spark, the system
+              processes race data into a feature rich dataset that feeds a RAG
+              pipeline using Pinecone and CrewAI. This allows the app to
+              retrieve similar historical situations and generate context aware
+              decisions, giving users a smarter way to understand race strategy
+              and performance.
+            </>
+          }
+          githubLink="https://github.com/Chu1503/f1-race-intelligence"
+          projectLink="https://f1-race-intelligence.vercel.app"
           projectLinkText="Visit Website"
-          image={webMarketMurmur}
+          image={webf1}
         />
         <ProjectCard
           title="Pennywise"
@@ -188,8 +204,8 @@ export default function Projects() {
                 friction experience that helps catch caregiver burnout early.
               </>
             }
-            link="https://github.com/Chu1503/invisible-patient"
-            githubLink="https://invisible-patient.vercel.app"
+            link="https://invisible-patient.vercel.app"
+            githubLink="https://github.com/Chu1503/invisible-patient"
             image={invisible_patient_website}
           />
           <BentoGridItem
